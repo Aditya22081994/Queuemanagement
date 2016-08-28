@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>GroupFundDeployment</servlet-name>
+		<servlet-class>com.google.GroupFundDeployment.GroupFundDeploymentServlet</servlet-class>
+	</servlet>
+	<servlet>
+	    <servlet-name>AdminValidation</servlet-name>
+	    <servlet-class>com.google.GroupFundDeployment.AdminValidation</servlet-class>
+	</servlet>
+	<servlet>
+	    <servlet-name>BankingOfficerValidation</servlet-name>
+	    <servlet-class>com.google.BankingOfficer.BankingOfficerValidation</servlet-class>
+	</servlet>
+	<servlet>
+	    <servlet-name>OperationalServletProduct</servlet-name>
+	    <servlet-class>com.google.GroupFundDeployment.OperationServletProduct</servlet-class>
+	</servlet>
+	<servlet>
+	    <servlet-name>OperationalServletServiceDesk</servlet-name>
+	    <servlet-class>com.google.GroupFundDeployment.OperationServletServiceDesk</servlet-class>
+	</servlet>
+	<servlet>
+	    <servlet-name>OperationalServletBranch</servlet-name>
+	    <servlet-class>com.google.GroupFundDeployment.OperationServletBranch</servlet-class>
+	</servlet>
+	<servlet>
+	    <servlet-name>OperationalServletBankingOfficer</servlet-name>
+	    <servlet-class>com.google.GroupFundDeployment.OperationServletBankingOfficer</servlet-class>
+	</servlet>
+	<servlet>
+	    <servlet-name>CustomerDetails</servlet-name>
+	    <servlet-class>com.google.Customer.CustomerDetails</servlet-class>
+	</servlet>
+	<servlet>
+	    <servlet-name>CustomerToken</servlet-name>
+	    <servlet-class>com.google.Customer.CustomerToken</servlet-class>
+	</servlet>
+		<servlet>
+	    <servlet-name>DeleteToken</servlet-name>
+	    <servlet-class>com.google.BankingOfficer.DeleteToken</servlet-class>
+	</servlet>
+		<servlet>
+	    <servlet-name>SendingEmail</servlet-name>
+	    <servlet-class>com.google.EmailSending.SendingEmailServlet</servlet-class>
+	</servlet>
+	
+	
+	
+	<servlet-mapping>
+		<servlet-name>BankingOfficerValidation</servlet-name>
+		<url-pattern>/bankingofficervalidation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GroupFundDeployment</servlet-name>
+		<url-pattern>/groupfunddeployment</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	    <servlet-name>AdminValidation</servlet-name>
+	    <url-pattern>/adminvalidation</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	    <servlet-name>OperationalServletProduct</servlet-name>
+	    <url-pattern>/operationalservletproduct</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	    <servlet-name>OperationalServletServiceDesk</servlet-name>
+	    <url-pattern>/operationservletservicedesk</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	    <servlet-name>OperationalServletBranch</servlet-name>
+	    <url-pattern>/operationalservletbranch</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	 <servlet-name>OperationalServletBankingOfficer</servlet-name>
+	    <url-pattern>/operationalservletbankingofficer</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	 <servlet-name>CustomerDetails</servlet-name>
+	    <url-pattern>/customerdetails</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	 <servlet-name>CustomerToken</servlet-name>
+	    <url-pattern>/customertoken</url-pattern>
+	</servlet-mapping>
+		<servlet-mapping>
+	 <servlet-name>DeleteToken</servlet-name>
+	    <url-pattern>/deletetoken</url-pattern>
+	</servlet-mapping>
+			<servlet-mapping>
+	 <servlet-name>SendingEmail</servlet-name>
+	    <url-pattern>/sendingemail</url-pattern>
+	</servlet-mapping>
+	
+
+	<welcome-file-list>
+		<welcome-file>Homepage.html</welcome-file>
+	</welcome-file-list>
+</web-app>
