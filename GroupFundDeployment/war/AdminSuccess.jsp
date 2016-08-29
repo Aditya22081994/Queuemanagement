@@ -129,8 +129,19 @@ a{
 <%! String name = null; 
 String admin=null; %>
 <nav>
-<%  admin = request.getAttribute("Admin").toString();
- name = admin.toUpperCase();
+<%  
+if(session.getAttribute("user") == null){
+	response.sendRedirect("AdminLogIn.html");
+}else admin = (String) session.getAttribute("user");
+String userName = null;
+String sessionID = null;
+Cookie[] cookies = request.getCookies();
+if(cookies !=null){
+for(Cookie cookie : cookies){
+	if(cookie.getName().equals("user")) userName = cookie.getValue();
+	if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
+}
+}
  %>
 <a href="AdminSuccess.jsp">HOME</a>
 

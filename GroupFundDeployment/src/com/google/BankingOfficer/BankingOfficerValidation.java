@@ -4,9 +4,11 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
@@ -42,9 +44,15 @@ public class BankingOfficerValidation extends HttpServlet{
 		}
 		
 		if(password.equals(dPass)){
-	       request.setAttribute("BankingOfficer",username);
-	      
-			rd1.forward(request, response);
+			HttpSession session = request.getSession();
+			session.setAttribute("banking", username);
+			
+			session.setMaxInactiveInterval(30*60);
+			Cookie userName = new Cookie("user", username);
+			userName.setMaxAge(30*60);
+			response.addCookie(userName);
+			
+			response.sendRedirect("BankingSuccess.jsp");
 		} else {
 			response.getWriter().println("Unsuccessful LogIn");
 		}

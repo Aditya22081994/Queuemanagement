@@ -35,9 +35,17 @@ public class AdminValidation extends HttpServlet{
 	}
 	
 	if(password.equals(dPass)){
-       request.setAttribute("Admin",username);
+		HttpSession session = request.getSession();
+		session.setAttribute("user", username);
+		
+		session.setMaxInactiveInterval(30*60);
+		Cookie userName = new Cookie("user", username);
+		userName.setMaxAge(30*60);
+		response.addCookie(userName);
+		
+		response.sendRedirect("AdminSuccess.jsp");
        
-		rd1.forward(request, response);
+	
 	} else {
 		response.getWriter().println("Unsuccessful LogIn");
 	}

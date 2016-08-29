@@ -130,8 +130,18 @@ a{
 String bankingofficer=null;%>
 <nav>
 <%
-bankingofficer=request.getAttribute("BankingOfficer").toString();  
-name=bankingofficer.toUpperCase();
+if(session.getAttribute("banking") == null){
+	response.sendRedirect("BankingLogIn.html");
+}else bankingofficer = (String) session.getAttribute("banking");
+String userName = null;
+String sessionID = null;
+Cookie[] cookies = request.getCookies();
+if(cookies !=null){
+for(Cookie cookie : cookies){
+	if(cookie.getName().equals("user")) userName = cookie.getValue();
+	if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
+}
+}
  %>
 <a href="BankingSuccess.jsp">HOME</a>
 
