@@ -168,6 +168,10 @@ a{
 <input type="text" class="form-control" name="ModifyName" placeholder="Enter Employee Name" required>
 </div>
 <div class="form-group">
+<label for="text">New Employee UserName: </label>
+<input type="text" class="form-control" name="ModifyUsername" placeholder="Enter Employee UserName" required>
+</div>
+<div class="form-group">
 <label for="text">New Employee Password :  </label>
 <input type="text" class="form-control" name="ModifyPassword" placeholder="Enter Password" required>
 </div>

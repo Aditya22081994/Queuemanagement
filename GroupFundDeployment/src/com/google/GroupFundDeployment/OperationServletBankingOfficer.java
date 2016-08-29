@@ -52,14 +52,27 @@ public class OperationServletBankingOfficer extends HttpServlet {
 
    }
 	else if(buttontypeTwo!=null){
-		String eCode = request.getParameter("ModifyCode");
+		int eCode = Integer.parseInt(request.getParameter("ModifyCode"));
 		   String eName = request.getParameter("ModifyName");
 		   String eUsername = request.getParameter("ModifyUsername");
+		   String ePassword = request.getParameter("ModifyPassword");
+		   
+		   String keyvalue = "8790"+eCode;
+		   
+		   Entity bankingofficer = new Entity("BankingOfficerTable",keyvalue);
+		   
+		   bankingofficer.setProperty("ocode",eCode);
+		   bankingofficer.setProperty("oname",eName);
+		   bankingofficer.setProperty("username",eUsername);
+		   bankingofficer.setProperty("password",ePassword);
+		   bankingofficer.setProperty("key", keyvalue);
+			
+		 ds.put(bankingofficer);
 				 
 		
 	   }
 	else if(buttontypeThree!=null){
-		String eCode = request.getParameter("DeleteCode");
+		int eCode = Integer.parseInt(request.getParameter("DeleteCode"));
 		String keyvalue = "8790"+eCode;
 		Key keysecond = KeyFactory.createKey("BankingOfficerTable",keyvalue);
 		

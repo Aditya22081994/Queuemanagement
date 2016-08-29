@@ -51,9 +51,19 @@ import com.google.appengine.api.datastore.KeyFactory;
 				 ds.put(servicedesk);
 			   }
 				else if(buttontypeTwo!=null){
-					String sCode = request.getParameter("ModifyScode");
-					   String sName = request.getParameter("ModifySbranchCode");
+					int sCode =Integer.parseInt(request.getParameter("ModifyScode"));
+					   String bCode = request.getParameter("ModifySbranchCode");
 					   String sStatus = request.getParameter("ModifySstatus");
+					   
+					   String keyservicedesk = "879075228"+sCode;
+						
+					   Entity servicedesk = new Entity("ServiceDeskTable",keyservicedesk);
+					   
+						servicedesk.setProperty("scode",sCode);
+						servicedesk.setProperty("bcode",bCode);
+						servicedesk.setProperty("status",sStatus);
+						
+					 ds.put(servicedesk);
 							 
 				
 				   }

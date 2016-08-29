@@ -47,14 +47,23 @@ import com.google.appengine.api.datastore.Key;
 				ds.put(branch);
 		   }
 			else if(buttontypeTwo!=null){
-				String bCode = request.getParameter("ModifyBcode");
+				int bCode = Integer.parseInt(request.getParameter("ModifyBcode"));
 				String bLocation = request.getParameter("ModifyBlocation");
+				
+				 String keybranch = "879075"+bCode;
+
+				   Entity branch = new Entity("BranchTable",keybranch);
+				   
+				   branch.setProperty("bcode",bCode);
+				   branch.setProperty("blocation",bLocation);
+			
+					ds.put(branch);
 	
 			
 	
 			   }
 			else if(buttontypeThree!=null){
-				   int bCode = Integer.parseInt(request.getParameter("AddBcode"));
+				   int bCode = Integer.parseInt(request.getParameter("DeleteBcode"));
 				   String keybranch = "879075"+bCode;
 
 				   Key keyString = KeyFactory.createKey("BranchTable",keybranch);

@@ -47,9 +47,15 @@ public class OperationServletProduct extends HttpServlet {
 		   ds.put(product);
 	   }
 		else if(buttontypeTwo!=null){
-			String pCode = request.getParameter("ModifyPcode");
+			int pCode = Integer.parseInt(request.getParameter("ModifyPcode"));
 			String pDescription = request.getParameter("ModifyPdescription");
-						 
+			 String keyproduct = "8790752"+pCode;
+
+			   Entity product = new Entity("TransactionTable",keyproduct);
+			   product.setProperty("transactionid",pCode);
+			   product.setProperty("transactiondescription",pDescription);
+			   
+			   ds.put(product);
 			  
 		   }
 		else if(buttontypeThree!=null){
