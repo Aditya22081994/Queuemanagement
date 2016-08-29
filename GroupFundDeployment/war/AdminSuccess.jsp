@@ -142,6 +142,7 @@ for(Cookie cookie : cookies){
 	if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
 }
 }
+name = admin.toUpperCase();
  %>
 <a href="AdminSuccess.jsp">HOME</a>
 
@@ -150,7 +151,7 @@ for(Cookie cookie : cookies){
 <a href="BranchTable.jsp">BRANCHES</a>
 <a href="BankingOfficerTable.jsp">BANKING OFFICERS</a>
 
-<a href="AdminLogout"><%= "ADMIN : "+"'"+admin+"'" %></a>
+<a href="adminlogout"><%= "ADMIN : "+"'"+admin+"'" %></a>
 </nav>
 
 <div class="container-fluid sect sectOne container-with-centered-content">

@@ -48,6 +48,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	    <servlet-name>SendingEmail</servlet-name>
 	    <servlet-class>com.google.EmailSending.SendingEmailServlet</servlet-class>
 	</servlet>
+	<servlet>
+	    <servlet-name>AdminLogout</servlet-name>
+	    <servlet-class>com.google.GroupFundDeployment.AdminLogout</servlet-class>
+	</servlet>
 		<servlet>
 	    <servlet-name>BankingOfficerLogOut</servlet-name>
 	    <servlet-class>com.google.BankingOfficer.BankingOfficerLogOut</servlet-class>
@@ -98,6 +102,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 			<servlet-mapping>
 	 <servlet-name>SendingEmail</servlet-name>
 	    <url-pattern>/sendingemail</url-pattern>
+	</servlet-mapping>
+		<servlet-mapping>
+	 <servlet-name>AdminLogout</servlet-name>
+	    <url-pattern>/adminlogout</url-pattern>
 	</servlet-mapping>
 		<servlet-mapping>
 	 <servlet-name>BankingOfficerLogOut</servlet-name>
