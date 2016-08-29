@@ -14,11 +14,10 @@ public class AdminValidation extends HttpServlet{
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		
-	System.out.println("Servlet Accessed");
+
 	String username=request.getParameter("Ausername");
 	String password=request.getParameter("Apassword");
 	
-	RequestDispatcher rd1 = request.getRequestDispatcher("AdminSuccess.jsp");
 	DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
 	
 	Query q = new Query("AdminTable");
@@ -31,14 +30,13 @@ public class AdminValidation extends HttpServlet{
 	PreparedQuery pq = ds.prepare(q);
 	for(Entity result : pq.asIterable()){
 		dPass = result.getProperty("password").toString();
-		System.out.println("Obtained Password: "+ dPass);
 	}
 	
 	if(password.equals(dPass)){
 		HttpSession session = request.getSession();
 		session.setAttribute("user", username);
-		
 		session.setMaxInactiveInterval(30*60);
+		
 		Cookie userName = new Cookie("user", username);
 		userName.setMaxAge(30*60);
 		response.addCookie(userName);

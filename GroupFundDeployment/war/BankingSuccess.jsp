@@ -150,7 +150,7 @@ for(Cookie cookie : cookies){
 <a href="CustomerTokenTable.jsp">CUSTOMER TOKENS</a>
 <a href="CustomerDetailsTable.jsp">CUSTOMER DETAILS</a>
 
-<a href="#"><%= "BankingOfficer : "+"'"+name+"'" %></a>
+<a href="bankingofficerlogout"><%= "BankingOfficer : "+"'"+name+"'" %></a>
 </nav>
 <div class="container-fluid sect sectOne container-with-centered-content">
 <% out.println("<h1>");
