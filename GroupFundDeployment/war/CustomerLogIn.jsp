@@ -129,21 +129,17 @@ a{
  
 </head>
 <body>
-
-<nav>
-<a href="Homepage.html">HOME</a>
-
-<a href="CustomerProductTable.jsp">PRODUCTS</a>
-<a href="CustomerServiceDeskTable.jsp">SERVICEDESK</a>
-
-</nav>
-
 <% 
         DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
         Query q = new Query("TransactionTable");
        q.addSort("transactionid",SortDirection.ASCENDING);
        PreparedQuery pq = ds.prepare(q);         
  %>
+<nav>
+<a href="Homepage.html">HOME</a>
+<a href="CustomerProductTable.jsp">PRODUCTS</a>
+<a href="CustomerServiceDeskTable.jsp">SERVICEDESK</a>
+</nav>
 
 <div class="container-fluid sect sectOne ">
 <br><br><br>
@@ -168,23 +164,35 @@ a{
         <input type="text" class="form-control" name="Cemail" placeholder="Enter email Id" required>
       </div>
     </div>
-    <div class="dropdown">
-     <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transaction Id</button>
-          <ul class="dropdown-menu">
-          <% for(Entity result: pq.asIterable()){%>
-                <li><%= result.getProperty("transactionid") %></li>       
-                <% } %>  
-           </ul>
-  </div>
-</div>
+    <div class="form-group">
+      <label class="control-label col-sm-2 white" for="text">Transaction Id</label>
+      <div class="col-sm-3">
         <input type="text" class="form-control" name="Ctransid" placeholder="Enter Transaction Id" required>
       </div>
-       <div class="form-group">
+    </div>
+           <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-success">Submit</button>
       </div>
     </div>
-  </form>
+  </form><br>
+  <table class="table table-bordered  table-condensed table-response">
+<tr>
+<td colspan="2" align="center"><h2>TRANSACTION DETAILS</h2></td>
+</tr>
+ <TR>
+          <th style="width:50%">Transaction ID</TH>
+          <th style="width:50%">Transaction Description</TH>
+ </TR>
+   <% for(Entity result: pq.asIterable()){%>
+  <TR>
+            <TD> <%= result.getProperty("transactionid") %></td>
+            <TD> <%= result.getProperty("transactiondescription").toString() %></TD>
+ </TR>
+     <% } %> 
+</table>
 </div>
+
+
 </body>
 </html>

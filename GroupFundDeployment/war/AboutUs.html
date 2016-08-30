@@ -1,14 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <title>Administrator Log In</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<title>About Us</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
-html,body{
+  html,body{
 	height: 100%;	
 }
 nav{
@@ -42,6 +41,12 @@ nav a{
 	font-size: 30px;
 	font-family: serif;
 }
+p{
+font-family: cursive;
+color: #fff;
+font-weight: inherit;
+font-size: 17px;
+}
 .sectOne{
 	background-image: url('http://cdn.pcwallart.com/images/empire-state-building-view-at-night-wallpaper-3.jpg');
 	opacity: 0.8;
@@ -52,7 +57,7 @@ nav a{
   justify-content: center;
 }
 .transparent{
-	opacity: 0.5;
+	opacity: 0.6;
 }
 .dropdown-menu{
 	opacity: 0.7;
@@ -118,55 +123,26 @@ a{
 	height:20px;
 	position: static;
 }
-</style>
- 
+footer{
+position: fixed;
+bottom: 0px;
+text-align: left;
+width: 100%;
+}
+  </style>
 </head>
 <body>
-
-<nav>
-<a href="Homepage.html">HOME</a>
-
-<a href="CustomerProductTable.jsp">PRODUCTS</a>
-<a href="CustomerServiceDeskTable.jsp">SERVICEDESK</a>
-
-</nav>
-
-
-<div class="container-fluid sect sectOne ">
-<br><br><br>
-  <h3><strong><b>CUSTOMER LOG IN</b></strong></h3>
-  <br>
-  <form class="form-horizontal" role="form" method="post" action="customerdetails">
-    <div class="form-group">
-      <label class="control-label col-sm-2 white" for="text">Name </label>
-      <div class="col-sm-3">
-        <input type="text" class="form-control" name="Cname"  placeholder="Enter Name" required>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2 white" for="text">Mobile No.</label>
-      <div class="col-sm-3">
-        <input type="text" class="form-control" name="Cmobile" placeholder="Enter mobile no." required>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2 white" for="text">Email Id</label>
-      <div class="col-sm-3">
-        <input type="text" class="form-control" name="Cemail" placeholder="Enter email Id" required>
-      </div>
-    </div>
-    <div class="dropdown">
-     <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transaction Id</button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <input type="text" class="form-control" name="Ctransid" placeholder="Enter Transaction Id" required>
-      </div>
-    </div>
-       <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-success">Submit</button>
-      </div>
-    </div>
-  </form>
-</div>
+<div class="container-fluid sect sectOne">
+    <h1>About Us</h1>
+    <p>GroupFund Bank was originally promoted in 2016 by GroupFund Limited, an Indian financial institution, and was its 
+    wholly-owned subsidiary.. GroupFund was formed in 2016 at the 
+     initiative of the World Bank, the Government of India and representatives of Indian industry. The principal objective 
+     was to create a development financial institution for providing medium-term and long-term 
+     project financing to Indian businesses.</p>
+     <p> This Web Application is developed by AA ltd. </p>
+     <footer align="right">
+     <p>Developed By Abdul and Aditya</p>
+     </footer>
+     </div>
 </body>
 </html>

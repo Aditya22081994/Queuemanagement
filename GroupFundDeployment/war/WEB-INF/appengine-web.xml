@@ -23,6 +23,7 @@
       <include path="CustomerLogIn.html"/>
       <include path="CustomerGenerateToken.html"/>
       <include path="SentEmailMessage.html"/>
+      <include path="AboutUs.html"/>
   </static-files>
   <!--
     HTTP Sessions are disabled by default. To enable HTTP sessions specify:
