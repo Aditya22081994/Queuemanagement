@@ -1,3 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@page import="com.google.appengine.api.datastore.Query"%>
+<%@page import="com.google.appengine.api.datastore.*"%>
+<%@page import="com.google.appengine.api.datastore.Query.FilterPredicate"%>
+<%@page import="com.google.appengine.api.datastore.Query.Filter"%>
+<%@page import="com.google.appengine.api.datastore.Query.SortDirection"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -131,6 +138,12 @@ a{
 
 </nav>
 
+<% 
+        DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
+        Query q = new Query("TransactionTable");
+       q.addSort("transactionid",SortDirection.ASCENDING);
+       PreparedQuery pq = ds.prepare(q);         
+ %>
 
 <div class="container-fluid sect sectOne ">
 <br><br><br>
@@ -157,10 +170,15 @@ a{
     </div>
     <div class="dropdown">
      <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Transaction Id</button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <ul class="dropdown-menu">
+          <% for(Entity result: pq.asIterable()){%>
+                <li><%= result.getProperty("transactionid") %></li>       
+                <% } %>  
+           </ul>
+  </div>
+</div>
         <input type="text" class="form-control" name="Ctransid" placeholder="Enter Transaction Id" required>
       </div>
-    </div>
        <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-success">Submit</button>

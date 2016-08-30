@@ -163,8 +163,8 @@ PreparedQuery pq = ds.prepare(q);
 <button name="ModifyBankingOfficer" type="submit" class="btn btn-success">Edit Table</button>
 </form></td>
 </tr>
-
 </table>
+<a class="btn btn-primary" href="AdminSuccess.jsp" role="button">Back to HomePage</a>
 </div>
 </body>
 </html>

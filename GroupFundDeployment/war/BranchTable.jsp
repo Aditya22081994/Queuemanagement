@@ -159,8 +159,8 @@ a{
 </form>
 </td>
 </tr>
-
 </table>
+<a class="btn btn-primary" href="AdminSuccess.jsp" role="button">Back to HomePage</a>
 </div>
 </body>
 </html>

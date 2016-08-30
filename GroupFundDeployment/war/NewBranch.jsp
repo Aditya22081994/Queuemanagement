@@ -10,7 +10,7 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style type="text/css">
   html,body{
-	height: 100%;	
+	background-color: #696969;
 }
 nav{
 	position: fixed;
@@ -27,8 +27,6 @@ nav a{
 	margin-left: 40px;
 }
 .sect{
-	height: 100%; 
-	background-repeat: no-repeat;
 }
 .sect h1{
 	color: #fff;
@@ -42,34 +40,19 @@ nav a{
 	font-size: 30px;
 	font-family: serif;
 }
-.sectOne{
-	/*background-image: url('http://cdn.pcwallart.com/images/empire-state-building-view-at-night-wallpaper-3.jpg'); */
-	background-color: black;
-	opacity: 0.8;
-}
+
 .container-with-centered-content {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.transparent{
-	opacity: 0.5;
-}
-.dropdown-menu{
-	opacity: 0.7;
-}
-.space{
-	white-space: pre;
-}
+
 .btn{
 	height:30px;
 }
 .white{
 	color: #fff;
 	font-size: 18px;
-}
-.black{
-	color: black;
 }
 .sect th,tr{
 	color: #fff;
@@ -123,7 +106,7 @@ a{
 </style>
 </head>
 <body>
-<div class="container-fluid sect sectOne">
+<div class="container-fluid sect ">
 <form role="form" action="operationalservletbranch" method="post">
 <fieldset>
 <legend><h3>Add Branch</h3></legend>
