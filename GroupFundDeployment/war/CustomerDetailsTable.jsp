@@ -140,7 +140,7 @@ PreparedQuery pq = ds.prepare(q);
 <div class="container-fluid sect sectOne">
 <table class="table table-bordered  table-condensed table-response">
 <tr align="center">
-<td colspan="5" align="center"><h2>Customer Tokens</h2></td>
+<td colspan="5" align="center"><h2>Customer Details</h2></td>
 </tr>
  <tr>
           <th>Name</th>

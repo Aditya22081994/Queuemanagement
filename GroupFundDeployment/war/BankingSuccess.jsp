@@ -146,8 +146,8 @@ name = bankingofficer.toUpperCase();
  %>
 <a href="BankingSuccess.jsp">HOME</a>
 
-<a href="CustomerProductPage.jsp">PRODUCTS</a>
-<a href="CustomerServiceDesk.jsp">SERVICEDESK</a>
+<a href="CustomerProductTable.jsp">PRODUCTS</a>
+<a href="CustomerServiceDeskTable.jsp">SERVICEDESK</a>
 <a href="CustomerTokenTable.jsp">CUSTOMER TOKENS</a>
 <a href="CustomerDetailsTable.jsp">CUSTOMER DETAILS</a>
 
