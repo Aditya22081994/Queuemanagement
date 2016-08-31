@@ -21,7 +21,7 @@ public class CustomerDetails extends HttpServlet {
 		String cName = request.getParameter("Cname");
 		String cMobile = request.getParameter("Cmobile");
 		String cEmail = request.getParameter("Cemail");
-		int cTransid = Integer.parseInt(request.getParameter("Ctransid"));
+		String cTransid = request.getParameter("Ctransid");
 		
 		DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
 		Date date = new Date();

@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@page import="com.google.appengine.api.datastore.Query"%>
-<%@page import="com.google.appengine.api.datastore.*"%>
-<%@page import="com.google.appengine.api.datastore.Query.FilterPredicate"%>
-<%@page import="com.google.appengine.api.datastore.Query.Filter"%>
-<%@page import="com.google.appengine.api.datastore.Query.SortDirection"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -129,12 +125,6 @@ a{
  
 </head>
 <body>
-<% 
-        DatastoreService ds = DatastoreServiceFactory.getDatastoreService();
-        Query q = new Query("TransactionTable");
-       q.addSort("transactionid",SortDirection.ASCENDING);
-       PreparedQuery pq = ds.prepare(q);         
- %>
 <nav>
 <a href="Homepage.html">HOME</a>
 <a href="CustomerProductTable.jsp">PRODUCTS</a>
@@ -167,7 +157,16 @@ a{
     <div class="form-group">
       <label class="control-label col-sm-2 white" for="text">Transaction Id</label>
       <div class="col-sm-3">
-        <input type="text" class="form-control" name="Ctransid" placeholder="Enter Transaction Id" required>
+      <select class="form-control" name="Ctransid">
+          <option>Select Transaction Id</option>
+         <option>1 - Current_Account</option>
+        <option>2 - Fixed_Deposit</option>
+        <option>3 - Saving_Account</option>
+        <option>4 - Credit_Cards</option>
+        <option>5 - Debit_Cards</option>
+        <option>6 - Loans</option>
+        <option>7 - General_Enquiry</option>
+       </select>
       </div>
     </div>
            <div class="form-group">
@@ -175,22 +174,8 @@ a{
         <button type="submit" class="btn btn-success">Submit</button>
       </div>
     </div>
-  </form><br>
-  <table class="table table-bordered  table-condensed table-response">
-<tr>
-<td colspan="2" align="center"><h2>TRANSACTION DETAILS</h2></td>
-</tr>
- <TR>
-          <th style="width:50%">Transaction ID</TH>
-          <th style="width:50%">Transaction Description</TH>
- </TR>
-   <% for(Entity result: pq.asIterable()){%>
-  <TR>
-            <TD> <%= result.getProperty("transactionid") %></td>
-            <TD> <%= result.getProperty("transactiondescription").toString() %></TD>
- </TR>
-     <% } %> 
-</table>
+  </form>
+  
 </div>
 
 

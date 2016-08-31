@@ -153,6 +153,7 @@ a{
      <% } %> 
 
 </table>
+<a class="btn btn-primary" href="Homepage.html" role="button">Back to HomePage</a>
 </div>
 </body>
 </html>
